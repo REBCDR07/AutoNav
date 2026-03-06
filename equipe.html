@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Équipe — AutoNav</title>
+<link rel="stylesheet" href="style.css"/>
+
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">auto<span>nav</span></a>
+  <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="vision.html">Vision</a>
+      <a href="services.html">Services</a>
+      <a href="stats.html">Chiffres</a>
+      <a href="histoire.html">Histoire</a>
+      <a href="projets.html">Projets</a>
+      <a href="equipe.html" class="active">Équipe</a>
+      <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+
+<div class="page">
+  <div class="glow" style="width:500px;height:500px;background:#052008;top:-60px;right:-60px;"></div>
+  <div class="page-inner">
+    <div class="page-tag">07 — Équipe</div>
+    <h2>Les <span class="hl">esprits</span><br>derrière tout ça.</h2>
+    <p class="lead">Une équipe pluridisciplinaire de passionnés qui croient que le beau et le fonctionnel ne font qu'un.</p>
+    <div class="card-grid">
+      <div class="card"><div class="card-icon">👩‍🎨</div><h4>Léa M. — Creative Dir.</h4><p>Ex-Figma. Obsédée par les micro-animations et le détail typographique.</p></div>
+      <div class="card"><div class="card-icon">👨‍💻</div><h4>Karim B. — Lead Dev</h4><p>WebGL, GSAP, performances browser. Transforme les maquettes en expériences vivantes.</p></div>
+      <div class="card"><div class="card-icon">🧠</div><h4>Sofia R. — UX Lead</h4><p>Cognitive design et psychologie comportementale. Comprend les utilisateurs mieux qu'eux-mêmes.</p></div>
+    </div>
+  </div>
+  <span class="page-num">07</span>
+</div>
+
+
+
+
+
+<!-- HUD -->
+<div id="hud">
+  <span class="hud-label">AutoNav</span>
+  <div class="hud-dots" id="hud-dots"></div>
+  <div class="hud-info">
+    <span class="hud-page-name" id="hud-page-name">—</span>
+    <span class="hud-countdown"  id="hud-countdown"></span>
+  </div>
+  <span class="hud-speed" id="hud-speed-lbl">1×</span>
+  <button class="hud-stop" onclick="stopAutoNav()">✕ Stop</button>
+  <div class="hud-bar-wrap">
+    <div class="hud-bar-bg"><div class="hud-bar-fill" id="hud-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- PAUSED BANNER -->
+<div id="paused-banner">
+  <div class="pb-title"><span class="pb-dot"></span> Navigation pausée</div>
+  <div class="pb-sub">Vous avez repris le contrôle</div>
+</div>
+
+<!-- LOOP TOAST -->
+<div id="loop-toast">🔄 Boucle complète — <em>retour à l'accueil</em></div>
+
+
+<script src="autonav.js"></script>
+<script>
+
+
+  window.addEventListener('DOMContentLoaded', () => {
+    initAutoNav();
+  });
+</script>
+</body>
+</html>

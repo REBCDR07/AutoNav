@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Histoire — AutoNav</title>
+<link rel="stylesheet" href="style.css"/>
+
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">auto<span>nav</span></a>
+  <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="vision.html">Vision</a>
+      <a href="services.html">Services</a>
+      <a href="stats.html">Chiffres</a>
+      <a href="histoire.html" class="active">Histoire</a>
+      <a href="projets.html">Projets</a>
+      <a href="equipe.html">Équipe</a>
+      <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+
+<div class="page">
+  <div class="glow" style="width:500px;height:500px;background:#281805;top:-60px;left:-60px;"></div>
+  <div class="page-inner">
+    <div class="page-tag">05 — Histoire</div>
+    <h2>Notre<br><span class="hl4">parcours.</span></h2>
+    <p class="lead" style="margin-bottom:.5rem">De l'idée à la reconnaissance internationale, chaque étape nous a forgés.</p>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot" style="background:var(--accent)"></div><div><h4>2016 — Les débuts</h4><p>Fondation avec une conviction simple : le design peut changer les comportements humains.</p></div></div>
+      <div class="tl-item"><div class="tl-dot" style="background:var(--accent2)"></div><div><h4>2019 — Expansion</h4><p>Ouverture d'un bureau à Paris. Équipe de 12 personnes, 80 projets au compteur.</p></div></div>
+      <div class="tl-item"><div class="tl-dot" style="background:var(--accent3)"></div><div><h4>2022 — Reconnaissance</h4><p>Awwwards Site of the Year. Partenariat avec trois licornes tech européennes.</p></div></div>
+      <div class="tl-item"><div class="tl-dot" style="background:var(--accent4)"></div><div><h4>2024 — AutoNav</h4><p>Lancement de la navigation automatique — une innovation inédite dans l'industrie.</p></div></div>
+    </div>
+  </div>
+  <span class="page-num">05</span>
+</div>
+
+
+
+
+
+<!-- HUD -->
+<div id="hud">
+  <span class="hud-label">AutoNav</span>
+  <div class="hud-dots" id="hud-dots"></div>
+  <div class="hud-info">
+    <span class="hud-page-name" id="hud-page-name">—</span>
+    <span class="hud-countdown"  id="hud-countdown"></span>
+  </div>
+  <span class="hud-speed" id="hud-speed-lbl">1×</span>
+  <button class="hud-stop" onclick="stopAutoNav()">✕ Stop</button>
+  <div class="hud-bar-wrap">
+    <div class="hud-bar-bg"><div class="hud-bar-fill" id="hud-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- PAUSED BANNER -->
+<div id="paused-banner">
+  <div class="pb-title"><span class="pb-dot"></span> Navigation pausée</div>
+  <div class="pb-sub">Vous avez repris le contrôle</div>
+</div>
+
+<!-- LOOP TOAST -->
+<div id="loop-toast">🔄 Boucle complète — <em>retour à l'accueil</em></div>
+
+
+<script src="autonav.js"></script>
+<script>
+
+
+  window.addEventListener('DOMContentLoaded', () => {
+    initAutoNav();
+  });
+</script>
+</body>
+</html>

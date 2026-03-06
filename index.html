@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Accueil — AutoNav</title>
+<link rel="stylesheet" href="style.css"/>
+
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">auto<span>nav</span></a>
+  <div class="nav-links">
+      <a href="index.html" class="active">Accueil</a>
+      <a href="vision.html">Vision</a>
+      <a href="services.html">Services</a>
+      <a href="stats.html">Chiffres</a>
+      <a href="histoire.html">Histoire</a>
+      <a href="projets.html">Projets</a>
+      <a href="equipe.html">Équipe</a>
+      <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+
+<div class="page" id="page-accueil">
+  <div class="glow" style="width:600px;height:600px;background:#1a3a05;top:-100px;right:-100px;"></div>
+  <div class="page-inner">
+    <div class="badge"><span class="badge-dot"></span> Disponible maintenant</div>
+    <div class="page-tag">01 — Accueil</div>
+    <h1>Le futur <span class="hl">commence</span><br>ici.</h1>
+    <p class="lead">Une expérience de navigation repensée. Laissez-vous guider automatiquement de page en page, ou explorez librement à votre rythme.</p>
+  </div>
+  <span class="page-num">01</span>
+</div>
+
+
+
+<!-- MODAL -->
+<div id="modal-overlay">
+  <div class="modal-card">
+    <div class="modal-icon">🧭</div>
+    <h3>Comment naviguer ?</h3>
+    <p>La navigation automatique vous guide de page en page, mains libres. Ou explorez librement à votre rythme.</p>
+    <div class="modal-actions">
+      <button class="btn btn-primary"   id="btn-auto">✦ Navigation automatique</button>
+      <button class="btn btn-secondary" id="btn-manual">Navigation personnelle</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- SPEED OVERLAY (centré) -->
+<div id="speed-overlay" style="display:none">
+  <div class="speed-card">
+    <div class="speed-card-top">
+      <div class="icon">⚡</div>
+      <div>
+        <h4>Choisissez votre vitesse</h4>
+        <p>Le rythme de défilement entre les pages</p>
+      </div>
+    </div>
+    <div class="speed-grid">
+      <button class="speed-btn" data-speed="0.1"><span class="lbl">0.1×</span><span class="dsc">Très lent</span></button>
+      <button class="speed-btn" data-speed="0.5"><span class="lbl">0.5×</span><span class="dsc">Lent</span></button>
+      <button class="speed-btn" data-speed="1">  <span class="lbl">1×</span>  <span class="dsc">Normal</span></button>
+      <button class="speed-btn" data-speed="2">  <span class="lbl">2×</span>  <span class="dsc">Rapide</span></button>
+      <button class="speed-btn" data-speed="3">  <span class="lbl">3×</span>  <span class="dsc">Très rapide</span></button>
+      <button class="speed-btn" data-speed="5">  <span class="lbl">5×</span>  <span class="dsc">Turbo 🔥</span></button>
+    </div>
+    <button class="speed-confirm" id="speed-confirm" disabled>Sélectionnez une vitesse</button>
+  </div>
+</div>
+
+
+<!-- HUD -->
+<div id="hud">
+  <span class="hud-label">AutoNav</span>
+  <div class="hud-dots" id="hud-dots"></div>
+  <div class="hud-info">
+    <span class="hud-page-name" id="hud-page-name">—</span>
+    <span class="hud-countdown"  id="hud-countdown"></span>
+  </div>
+  <span class="hud-speed" id="hud-speed-lbl">1×</span>
+  <button class="hud-stop" onclick="stopAutoNav()">✕ Stop</button>
+  <div class="hud-bar-wrap">
+    <div class="hud-bar-bg"><div class="hud-bar-fill" id="hud-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- PAUSED BANNER -->
+<div id="paused-banner">
+  <div class="pb-title"><span class="pb-dot"></span> Navigation pausée</div>
+  <div class="pb-sub">Vous avez repris le contrôle</div>
+</div>
+
+<!-- LOOP TOAST -->
+<div id="loop-toast">🔄 Boucle complète — <em>retour à l'accueil</em></div>
+
+
+<script src="autonav.js"></script>
+<script>
+
+  document.getElementById('btn-auto').onclick = () => {
+    fadeOut(document.getElementById('modal-overlay'), () => {
+      document.getElementById('modal-overlay').remove();
+      document.getElementById('speed-overlay').style.display = 'flex';
+      setupSpeedToast();
+    });
+  };
+  document.getElementById('btn-manual').onclick = () => {
+    fadeOut(document.getElementById('modal-overlay'), () => {
+      document.getElementById('modal-overlay').remove();
+    });
+  };
+
+
+  window.addEventListener('DOMContentLoaded', () => {
+    initAutoNav();
+  });
+</script>
+</body>
+</html>

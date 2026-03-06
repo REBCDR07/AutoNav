@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chiffres — AutoNav</title>
+<link rel="stylesheet" href="style.css"/>
+
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">auto<span>nav</span></a>
+  <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="vision.html">Vision</a>
+      <a href="services.html">Services</a>
+      <a href="stats.html" class="active">Chiffres</a>
+      <a href="histoire.html">Histoire</a>
+      <a href="projets.html">Projets</a>
+      <a href="equipe.html">Équipe</a>
+      <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+
+<div class="page">
+  <div class="glow" style="width:480px;height:480px;background:#052828;bottom:-80px;right:-60px;"></div>
+  <div class="page-inner">
+    <div class="page-tag">04 — Chiffres</div>
+    <h2>Des résultats<br><span class="hl3">concrets.</span></h2>
+    <p class="lead">Les chiffres parlent d'eux-mêmes. Chaque projet est une opportunité de créer de l'impact mesurable et durable.</p>
+    <div class="stat-row">
+      <div class="stat-item"><h3 class="hl">+240</h3><p>Projets livrés</p></div>
+      <div class="stat-item"><h3 class="hl2">98%</h3><p>Clients satisfaits</p></div>
+      <div class="stat-item"><h3 class="hl3">8 ans</h3><p>D'expérience</p></div>
+      <div class="stat-item"><h3 class="hl4">32</h3><p>Pays couverts</p></div>
+    </div>
+  </div>
+  <span class="page-num">04</span>
+</div>
+
+
+
+
+
+<!-- HUD -->
+<div id="hud">
+  <span class="hud-label">AutoNav</span>
+  <div class="hud-dots" id="hud-dots"></div>
+  <div class="hud-info">
+    <span class="hud-page-name" id="hud-page-name">—</span>
+    <span class="hud-countdown"  id="hud-countdown"></span>
+  </div>
+  <span class="hud-speed" id="hud-speed-lbl">1×</span>
+  <button class="hud-stop" onclick="stopAutoNav()">✕ Stop</button>
+  <div class="hud-bar-wrap">
+    <div class="hud-bar-bg"><div class="hud-bar-fill" id="hud-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- PAUSED BANNER -->
+<div id="paused-banner">
+  <div class="pb-title"><span class="pb-dot"></span> Navigation pausée</div>
+  <div class="pb-sub">Vous avez repris le contrôle</div>
+</div>
+
+<!-- LOOP TOAST -->
+<div id="loop-toast">🔄 Boucle complète — <em>retour à l'accueil</em></div>
+
+
+<script src="autonav.js"></script>
+<script>
+
+
+  window.addEventListener('DOMContentLoaded', () => {
+    initAutoNav();
+  });
+</script>
+</body>
+</html>
